@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'widgets/button.dart';
 void main() {
   runApp(const MainApp());
 }
@@ -116,27 +116,15 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: cambiarTitulo,
-                  child: Text(buttonTitle),
-                ),
-                ElevatedButton(
-                  onPressed: borrarTitulo,
-                  child: Text(buttonText),
-                ),
+                Button(buttonTitle, cambiarTitulo),
+                Button(buttonText, borrarTitulo),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: cambiarColorRojo,
-                  child: Text(buttonTextRojo),
-                ),
-                ElevatedButton(
-                  onPressed: cambiarColorVerde,
-                  child: Text(buttonTextVerde),
-                ),
+                Button(buttonTextRojo, cambiarColorRojo),
+                Button(buttonTextVerde, cambiarColorVerde),
               ],
             ),
             Row(
@@ -146,10 +134,8 @@ class _HomePageState extends State<HomePage> {
                   onPressed: achicarLetra,
                   child: Text("Achicar letra"),
                 ),
-                ElevatedButton(
-                  onPressed: agrandarLetra,
-                  child: Text("Agrandar letra"),
-                ),
+                Button("Achicar letra", achicarLetra),
+                Button("Agrandar letra", agrandarLetra)
               ],
             ),
           ],

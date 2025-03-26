@@ -30,10 +30,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String title = "Título original";
-  String buttonTitle = "Cambiar titulo";
-  String buttonText = "Borrar titulo";
+  String cambiarTituloText = "Cambiar titulo";
+  String borrarTituloText = "Borrar titulo";
   String buttonTextRojo = "Cambiar a rojo";
   String buttonTextVerde = "Cambiar a verde";
+  String achicarLetraText = "Achicar letra";
+  String agrandarLetraText = "Agrandar letra";
   Color color = Color.fromARGB(96, 41, 37, 241);
   double font = 24;
   double sumarTamano = 2;
@@ -41,7 +43,7 @@ class _HomePageState extends State<HomePage> {
   void cambiarTitulo() {
     setState(() {
       title = title == "Título original" ? "Nuevo título" : "Título original";
-      buttonTitle =
+      cambiarTituloText =
           title == "Título original" ? "Cambiar titulo" : "Volver al original";
     });
   }
@@ -49,8 +51,8 @@ class _HomePageState extends State<HomePage> {
   void borrarTitulo() {
     setState(() {
       title = title.isNotEmpty ? "" : "Título original";
-      buttonText =
-          buttonText == "Borrar titulo" ? "Mostrar titulo" : "Borrar titulo";
+      borrarTituloText =
+          borrarTituloText == "Borrar titulo" ? "Mostrar titulo" : "Borrar titulo";
     });
   }
 
@@ -116,8 +118,8 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Button(buttonTitle, cambiarTitulo),
-                Button(buttonText, borrarTitulo),
+                Button(cambiarTituloText, cambiarTitulo),
+                Button(borrarTituloText, borrarTitulo),
               ],
             ),
             Row(
@@ -130,12 +132,8 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: achicarLetra,
-                  child: Text("Achicar letra"),
-                ),
-                Button("Achicar letra", achicarLetra),
-                Button("Agrandar letra", agrandarLetra)
+                Button(achicarLetraText, achicarLetra),
+                Button(agrandarLetraText, agrandarLetra)
               ],
             ),
           ],
